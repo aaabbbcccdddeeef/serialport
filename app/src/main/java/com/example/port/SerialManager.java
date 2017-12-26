@@ -2,6 +2,8 @@ package com.example.port;
 
 import android.app.Activity;
 
+import com.fanfan.hotel.serial.SerialPort;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;

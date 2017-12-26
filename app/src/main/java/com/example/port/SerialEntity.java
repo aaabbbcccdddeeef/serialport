@@ -1,5 +1,7 @@
 package com.example.port;
 
+import com.fanfan.hotel.serial.SerialPort;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 
