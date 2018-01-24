@@ -1,16 +1,15 @@
-package com.example.port;
+package com.example.port.serial;
 
 /**
- * Created by lyw on 2017-11-11.
+ * Created by android on 2017/12/26.
  */
 
 public class HexUtils {
 
-
     /**
      * bytes转换成十六进制字符串
      *
-     * @param  b
+     * @param b
      * @return String 每个Byte值之间空格分隔
      */
     public static String byte2HexStr(byte[] b) {
@@ -26,6 +25,7 @@ public class HexUtils {
 
     /**
      * 16进制转换成为string类型字符串
+     *
      * @param s
      * @return
      */
@@ -78,5 +78,6 @@ public class HexUtils {
     public static byte HexToByte(String inHex) {//Hex字符串转byte
         return (byte) Integer.parseInt(inHex, 16);
     }
+
 
 }

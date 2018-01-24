@@ -94,7 +94,7 @@ static speed_t getBaudrate(jint baudrate) {
  * Method:    open
  * Signature: (Ljava/lang/String;)V
  */
-JNIEXPORT jobject JNICALL Java_com_fanfan_hotel_serial_SerialPort_open(JNIEnv *env, jobject thiz, jstring path,jint baudrate) {
+JNIEXPORT jobject JNICALL Java_com_example_port_serial_SerialPort_open(JNIEnv *env, jobject thiz, jstring path,jint baudrate) {
     int fd;
     speed_t speed;
     jobject mFileDescriptor;
@@ -167,7 +167,7 @@ JNIEXPORT jobject JNICALL Java_com_fanfan_hotel_serial_SerialPort_open(JNIEnv *e
  * Method:    close
  * Signature: ()V
  */
-JNIEXPORT jint JNICALL Java_com_fanfan_hotel_serial_SerialPort_close(JNIEnv * env, jobject thiz)
+JNIEXPORT jint JNICALL Java_com_example_port_serial_SerialPort_close(JNIEnv * env, jobject thiz)
 {
     jclass SerialPortClass = env->GetObjectClass(thiz);
     jclass FileDescriptorClass = env->FindClass("java/io/FileDescriptor");
@@ -184,8 +184,8 @@ JNIEXPORT jint JNICALL Java_com_fanfan_hotel_serial_SerialPort_close(JNIEnv * en
 }
 
 static JNINativeMethod gMethods[] = {
-        { "open", "(Ljava/lang/String;I)Ljava/io/FileDescriptor;",(void*) Java_com_fanfan_hotel_serial_SerialPort_open },
-        { "close", "()I",(void*) Java_com_fanfan_hotel_serial_SerialPort_close },
+        { "open", "(Ljava/lang/String;I)Ljava/io/FileDescriptor;",(void*) Java_com_example_port_serial_SerialPort_open },
+        { "close", "()I",(void*) Java_com_example_port_serial_SerialPort_close },
 };
 
 /*
@@ -209,7 +209,7 @@ static int registerNativeMethods(JNIEnv* env, const char* className,
  * 为所有类注册本地方法
  */
 static int registerNatives(JNIEnv* env) {
-    const char* kClassName = "com/fanfan/hotel/serial/SerialPort"; //指定要注册的类
+    const char* kClassName = "com/example/port/serial/SerialPort"; //指定要注册的类
     return registerNativeMethods(env, kClassName, gMethods,
             sizeof(gMethods) / sizeof(gMethods[0]));
 }
